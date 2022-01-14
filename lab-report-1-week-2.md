@@ -39,12 +39,15 @@ Next, open a terminal in Visual Studio Code or open a Command Prompt. Input the 
 
 `ssh cs15lwi22zz@ieng6.ucsd.edu`
 
-If the message,<br/>
-`"The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
+If this message pops up -
+```
+The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
 RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? ` comes up, type in yes, press enter, and give your password (it will not appear for security reasons)!
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+type in yes, press enter, and give your password (it will not appear on the screen for security reasons)!
 
-If your screen looks like this, you are ready to move on!
+When your screen looks like this, you are ready to move on!
 
 ![image](Screenshot2022-01-13175112.png)
 <br/>
@@ -68,9 +71,32 @@ Like this:
 ### **Step 4:**
 #### Moving Files with scp
 
+You are almost done! Our goal is to be able to work between our computer and the remote computer, so one skill that is important is copying files over. We can do this by using the command `scp`.
+
+Create a file called `WhereAmI.java` with the following contents:
+```
+class WhereAmI {
+  public static void main(String[] args) {
+    System.out.println(System.getProperty("os.name"));
+    System.out.println(System.getProperty("user.name"));
+    System.out.println(System.getProperty("user.home"));
+    System.out.println(System.getProperty("user.dir"));
+  }
+}
+```
+Compile this file with the command `javac` and then run it with the command `java` **on your computer**. This will only work if you have Java already installed.
+
+Repeat these commands but this time on the remote server. Because the UCSD computer has Java, this should work for everyone.
+
+Type `ls` in the command prompt and you should see the file in the home directory!
+
+![image](Screenshot2022-01-13182320.png)
+<br/>
+### **Step 5:**
+#### Setting an SSH Key
 
 
-<!-- 
-Setting an SSH Key
+
+<!--
 Optimizing Remote Running
 -->
