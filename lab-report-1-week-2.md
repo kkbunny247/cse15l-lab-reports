@@ -42,42 +42,18 @@ Next, open a terminal in Visual Studio Code or open a Command Prompt. Input the 
 If the message,<br/>
 `"The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
 RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? ` comes up, type in yes and press enter!
+Are you sure you want to continue connecting (yes/no/[fingerprint])? ` comes up, type in yes, press enter, and give your password (it will not appear for security reasons)!
 
-So type yes and press enter, then give your password; the whole interaction should look something like this once you give your password and are logged in:
+If your screen looks like this, you are ready to move on!
 
-⤇ ssh cs15lwi22zz@ieng6.ucsd.edu
-The authenticity of host 'ieng6-202.ucsd.edu (128.54.70.227)' can't be established.
-RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? 
-Password: 
-Last login: Sun Jan  2 14:03:05 2022 from 107-217-10-235.lightspeed.sndgca.sbcglobal.net
-quota: No filesystem specified.
-Hello cs15lwi22zz, you are currently logged into ieng6-203.ucsd.edu
-
-You are using 0% CPU on this system
-
-Cluster Status 
-Hostname     Time    #Users  Load  Averages  
-ieng6-201   23:25:01   0  0.08,  0.17,  0.11
-ieng6-202   23:25:01   1  0.09,  0.15,  0.11
-ieng6-203   23:25:01   1  0.08,  0.15,  0.11
-
-Sun Jan 02, 2022 11:28pm - Prepping cs15lwi22
-Now your terminal is connected to a computer in the CSE basement, and any commands you run will run on that computer! We call your computer the client and the computer in the basement the server based on how you are connected.
-
-If, in this process, you run into errors and can’t figure out how to proceed, ask! When you ask, take a screenshot of your problem and add it to your group’s running notes document, then describe what the fix was. If you don’t know how to take a screenshot, ask!
-
-Remember – it is rare for a tutorial to work perfectly. We often have to stop, think, guess, Google search, ask someone, etc. in order to get things to work the way the tutorial says. I look up the right way to describe the (yes/no) answer on first login all the time, for example. So you are helping your group learn about potential issues when you do this, and that’s a major learning outcome of the course! If you see someone else have an issue that you didn’t, ask why, and what might be different about what you did, or how your environment is set up. You will learn by reflecting on this.
-
-Write down in notes When you’re done, discuss what you saw upon login. Take a screenshot or copy/paste the output. Did you all see the same thing? What might the differences mean? Note the results of your discussion in the notes document.
+![image](Screenshot2022-01-13175112.png)
+<br/>
+### **Step 3:**
+#### Trying Some Commands
 
 
 <!-- 
 
-
-
-Trying Some Commands
 Moving Files with scp
 Setting an SSH Key
 Optimizing Remote Running
