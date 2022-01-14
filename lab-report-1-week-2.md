@@ -22,6 +22,7 @@ Follow the instructions according to the website; this process will differ depen
 
 Your setup should look something like this!
 <br/>
+
 ### **Step 2:**
 #### Remotely Connecting
 <br/>
@@ -51,6 +52,7 @@ When your screen looks like this, you are ready to move on!
 
 ![image](Screenshot2022-01-13175112.png)
 <br/>
+
 ### **Step 3:**
 #### Trying Some Commands
 
@@ -66,6 +68,7 @@ Here are some commands to try:
 
 ![image](Screenshot2022-01-13180013.png)
 <br/>
+
 ### **Step 4:**
 #### Moving Files with "scp"
 
@@ -86,10 +89,11 @@ Compile this file with the command `javac` and then run it with the command `jav
 
 Repeat these commands but this time on the remote server. Because the UCSD computers have Java set up, this should work for everyone.
 
-If you type `ls` in the command prompt, you should see the file in the home directory!
+If you call the command `ls`, you should see the file in the home directory!
 
 ![image](Screenshot2022-01-13182320.png)
 <br/>
+
 ### **Step 5:**
 #### Setting an SSH Key
 
@@ -106,6 +110,7 @@ Follow this code now, starting with `ssh cs15lwi22zz@ieng6.ucsd.edu`. Remember t
 
 When it asks for the password, press your enter key to save the action as your new password. Now, we can get ahold of the server without entering any password!
 <br/>
+
 ### **Step 6:**
 #### Optimizing Remote Running
 
