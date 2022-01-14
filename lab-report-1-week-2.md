@@ -11,7 +11,7 @@ Hello 15L students! The following is a tutorial on how to log into a course-spec
 
 <br/>
 
-### **Step 1:**
+## **Step 1:**
 #### Installing VScode
 Download "Visual Studio Code" from this link: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
@@ -21,7 +21,7 @@ Follow the instructions according to the website; this process will differ depen
 
 Your setup should look something like this!
 <br/>
-### **Step 2:**
+## **Step 2:**
 #### Remotely Connecting
 <br/>
 
@@ -50,7 +50,7 @@ When your screen looks like this, you are ready to move on!
 
 ![image](Screenshot2022-01-13175112.png)
 <br/>
-### **Step 3:**
+## **Step 3:**
 #### Trying Some Commands
 
 Give yourself sometime to play around with the Visual Studio Code terminal or Command Prompt, both on the client (your computer) and the server (the remote connection). To get on the UCSD server, repeat the `ssh cs15lwi22zz@ieng6.ucsd.edu` command from Step 2!
@@ -67,7 +67,7 @@ Like this:
 
 ![image](Screenshot2022-01-13180013.png)
 <br/>
-### **Step 4:**
+## **Step 4:**
 #### Moving Files with "scp"
 
 You are almost done! Our goal is to be able to work between our computer and the remote computer, so one skill that is important is copying files over. We can do this by using the command `scp`.
@@ -91,7 +91,7 @@ If you type `ls` in the command prompt, you should see the file in the home dire
 
 ![image](Screenshot2022-01-13182320.png)
 <br/>
-### **Step 5:**
+## **Step 5:**
 #### Setting an SSH Key
 
 We can make signing into the UCSD server faster and easier by getting rid of our password altogether, and we do so by using the ssh keys.
@@ -107,7 +107,7 @@ Follow this code now, starting with `ssh cs15lwi22zz@ieng6.ucsd.edu`. Remember t
 
 When it asks for the password, press your enter key to save the action as your new password. Now, we can get ahold of the server without entering any password!
 <br/>
-### **Step 6:**
+## **Step 6:**
 #### Optimizing Remote Running
 
 It is time to combine everything we have learned together! We know how to run code on the remote server without needing to enter a password and we know what a few command lines can do!
