@@ -1,4 +1,4 @@
-## **LAB 1 REPORT**
+# **LAB 1 REPORT**
 #### (A16282947)
 <br/>
 
@@ -127,5 +127,9 @@ javac WhereAmI.java; java WhereAmI
 ```
 ![image](Screenshot2022-01-13190700.png)
 
+<br/>
+
 ---
-### **Congratulations! You have finished the tutorial!** ✔️
+<br/>
+
+## **Congratulations! You have finished the tutorial!** ✔️
