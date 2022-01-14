@@ -132,6 +132,5 @@ javac WhereAmI.java; java WhereAmI
 <br/>
 
 ---
-<br/>
 
 ### **Congratulations! You have finished the tutorial!** ✔️
