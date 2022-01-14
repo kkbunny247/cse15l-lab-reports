@@ -22,6 +22,7 @@ Follow the instructions according to the website; this process will differ depen
 
 Your setup should look something like this!
 <br/>
+<br/>
 
 ### **Step 2:**
 #### Remotely Connecting
@@ -52,6 +53,7 @@ When your screen looks like this, you are ready to move on!
 
 ![image](Screenshot2022-01-13175112.png)
 <br/>
+<br/>
 
 ### **Step 3:**
 #### Trying Some Commands
@@ -67,6 +69,7 @@ Here are some commands to try:
 `pwd`<br/>
 
 ![image](Screenshot2022-01-13180013.png)
+<br/>
 <br/>
 
 ### **Step 4:**
@@ -93,6 +96,7 @@ If you call the command `ls`, you should see the file in the home directory!
 
 ![image](Screenshot2022-01-13182320.png)
 <br/>
+<br/>
 
 ### **Step 5:**
 #### Setting an SSH Key
@@ -109,6 +113,7 @@ Follow this code now, starting with `ssh cs15lwi22zz@ieng6.ucsd.edu`. Remember t
 ![image](Screenshot2022-01-13185127.png)
 
 When it asks for the password, press your enter key to save the action as your new password. Now, we can get ahold of the server without entering any password!
+<br/>
 <br/>
 
 ### **Step 6:**
