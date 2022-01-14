@@ -1,7 +1,6 @@
 # **LAB 1 REPORT**
-<br/>
 
-Hello 15L students! The following is a tutorial on how to log into a course-specific account on ieng6. To do so, we will cover these few tasks:
+Hello 15L students! The following is a tutorial on how to log into a course-specific account on ieng6. We will cover these few tasks:
 
 1. Installing Visual Studio Code
 2. Remotely connecting to a UCSD server
