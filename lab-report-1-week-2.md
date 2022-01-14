@@ -15,7 +15,6 @@ Hello 15L students! The following is a tutorial on how to log into a course-spec
 
 ### **Step 1:**
 #### Installing VScode
-
 Download "Visual Studio Code" from this link: https://code.visualstudio.com/. 
 
 Follow the instructions according to the website; this process will differ depending on if you operate on, for example, OSX or Windows.
@@ -26,7 +25,6 @@ Your setup should look something like this!
 <br/>
 ### **Step 2:**
 #### Remotely Connecting
-
 > FOR WINDOWS USERS ONLY:
 - Before getting to the UCSD server, we have to install a program called OpenSSH, which allows us to connect remotely.
 - Navigate to "Optional Features" in "Settings." Search and install OpenSSH Client and OpenSSH Server. When you are done, proceed with the next steps!
