@@ -111,3 +111,17 @@ Now, we can get ahold of the server without entering any password!
 ### **Step 6:**
 #### Optimizing Remote Running
 
+It is time to combine everything we have learned together! We know how to run code on the remote server without needing to etner a password and we know what a few command lines can do!
+
+Here are some more shortcuts:
+
+This format will allow us to log on to the remote server and run code in one line!
+```
+ssh cs15lwi22zz@ieng6.ucsd.edu "ls"
+```
+![image](Screenshot2022-01-13185846.png)
+This format is a way to write multiple commands in one line!
+```
+javac WhereAmI.java; java WhereAmI
+```
+![image](Screenshot2022-01-13190700.png)
