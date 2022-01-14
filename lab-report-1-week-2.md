@@ -1,4 +1,4 @@
-## **Lab 1 Report**
+## **LAB 1 REPORT**
 #### (A16282947)
 <br/>
 
@@ -15,7 +15,6 @@ Hello 15L students! The following is a tutorial on how to log into a course-spec
 
 ### **Step 1:**
 #### Installing VScode
-<br/>
 
 Download "Visual Studio Code" from this link: https://code.visualstudio.com/. 
 
@@ -25,10 +24,8 @@ Follow the instructions according to the website; this process will differ depen
 
 Your setup should look something like this!
 <br/>
-<br/>
 ### **Step 2:**
 #### Remotely Connecting
-<br/>
 
 > FOR WINDOWS USERS ONLY:
 - Before getting to the UCSD server, we have to install a program called OpenSSH, which allows us to connect remotely.
@@ -38,20 +35,16 @@ Your setup should look something like this!
 
 Find your account for the CSE 15L class here: https://sdacs.ucsd.edu/~icc/index.php
 
-Then, in Visual Studio Code, we are going to connect to the remote computer using VSCode’s remote option. For reference, we’re following the steps in “Connect to a remote host” step.
+The course will be under "Additional Accounts." Locate your account. It will be something similar to this, cs15lwi22**zz**@ieng6.ucsd.edu, except the "zz" will be letters specific to your UCSD account.
 
-For the first step, open a terminal in VSCode (Ctrl or Command + `, or use the Terminal → New Terminal menu option). Your command will look like this, but with the zz replaced by the letters in your course-specific account.
+Next, open a terminal in Visual Studio Code or open a Command Prompt. Input the following command:
 
-$ ssh cs15lwi22zz@ieng6.ucsd.edu
-(That’s one, five, l (not one); the one and l look very close in some fonts.)
+`ssh cs15lwi22zz@ieng6.ucsd.edu`
 
-Since this is likely the first time you’ve connected to this server, you will probably get a message like this:
-
-⤇ ssh cs15lwi22zz@ieng6.ucsd.edu
-The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
+If the message,<br/>
+`"The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
 RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? 
-I (Joe) always say yes to these messages when I’m connecting to a new server for the first time; it’s expected to get this message in that case. If you get this message when you’re connecting to a server you connect to often, it could mean someone is trying to listen in on or control the connection. This answer is a decent description of what’s going on: Ben Voigt’s answer
+Are you sure you want to continue connecting (yes/no/[fingerprint])? ` comes up, type in yes and press enter!
 
 So type yes and press enter, then give your password; the whole interaction should look something like this once you give your password and are logged in:
 
