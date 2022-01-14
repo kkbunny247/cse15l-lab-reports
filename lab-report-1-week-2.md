@@ -51,10 +51,26 @@ If your screen looks like this, you are ready to move on!
 ### **Step 3:**
 #### Trying Some Commands
 
+Give yourself sometime to play around with the terminal or command prompt, both on the client (your computer) and the server (the remote connection). To get on the UCSD server, repeat Step 2!
+
+Here are some commands to try:
+
+`cd ~`<br/>
+`cd`<br/>
+`cd dir`<br/>
+`ls -al`<br/>
+`pwd`<br/>
+
+Like this:
+
+![image](Screenshot2022-01-13180013.png)
+<br/>
+### **Step 4:**
+#### Moving Files with scp
+
+
 
 <!-- 
-
-Moving Files with scp
 Setting an SSH Key
 Optimizing Remote Running
 -->
