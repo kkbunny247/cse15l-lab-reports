@@ -15,7 +15,7 @@ Hello 15L students! The following is a tutorial on how to log into a course-spec
 
 ### **Step 1:**
 #### Installing VScode
-Download "Visual Studio Code" from this link: https://code.visualstudio.com/. 
+Download "Visual Studio Code" from this link: [https://code.visualstudio.com/](https://code.visualstudio.com/)
 
 Follow the instructions according to the website; this process will differ depending on if you operate on, for example, OSX or Windows.
 
@@ -25,27 +25,28 @@ Your setup should look something like this!
 <br/>
 ### **Step 2:**
 #### Remotely Connecting
+<br/>
+
 > FOR WINDOWS USERS ONLY:
 - Before getting to the UCSD server, we have to install a program called OpenSSH, which allows us to connect remotely.
 - Navigate to "Optional Features" in "Settings." Search and install OpenSSH Client and OpenSSH Server. When you are done, proceed with the next steps!
 
 <br/>
 
-Find your account for the CSE 15L class here: https://sdacs.ucsd.edu/~icc/index.php
+Find your account for the CSE 15L class here: [https://sdacs.ucsd.edu/~icc/index.php](https://sdacs.ucsd.edu/~icc/index.php)
 
-The course will be under "Additional Accounts." Locate your account. It will be something similar to this, cs15lwi22**zz**@ieng6.ucsd.edu, except the "zz" will be letters specific to your UCSD account.
+The course is located under "Additional Accounts." Locate your account. It will be something similar to cs15lwi22**zz**@ieng6.ucsd.edu, except the "**zz**" will be letters specific to your UCSD account.
 
-Next, open a terminal in Visual Studio Code or open a Command Prompt. Input the following command:
+Next, open a terminal in Visual Studio Code or open a Command Prompt.
+Input the following command: `ssh cs15lwi22zz@ieng6.ucsd.edu`
 
-`ssh cs15lwi22zz@ieng6.ucsd.edu`
-
-If this message pops up -
+This message may pop up:
 ```
 The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
 RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
-type in yes, press enter, and give your password (it will not appear on the screen for security reasons)!
+Type in yes, press enter, and give your password (it will not appear on the screen for security reasons)!
 
 When your screen looks like this, you are ready to move on!
 
@@ -54,7 +55,7 @@ When your screen looks like this, you are ready to move on!
 ### **Step 3:**
 #### Trying Some Commands
 
-Give yourself sometime to play around with the terminal or command prompt, both on the client (your computer) and the server (the remote connection). To get on the UCSD server, repeat Step 2!
+Give yourself sometime to play around with the Visual Studio Code terminal or Command Prompt, both on the client (your computer) and the server (the remote connection). To get on the UCSD server, repeat the `ssh cs15lwi22zz@ieng6.ucsd.edu` command from Step 2!
 
 Here are some commands to try:
 
@@ -73,7 +74,7 @@ Like this:
 
 You are almost done! Our goal is to be able to work between our computer and the remote computer, so one skill that is important is copying files over. We can do this by using the command `scp`.
 
-Create a file called `WhereAmI.java` with the following contents:
+Create a file `WhereAmI.java` with the following contents:
 ```
 class WhereAmI {
   public static void main(String[] args) {
@@ -84,11 +85,11 @@ class WhereAmI {
   }
 }
 ```
-Compile this file with the command `javac` and then run it with the command `java` **on your computer**. This will only work if you have Java already installed.
+Compile this file with the command `javac` and then run it with the command `java` **on your computer**. Note that this will only work if you have Java already installed.
 
-Repeat these commands but this time on the remote server. Because the UCSD computer has Java, this should work for everyone.
+Repeat these commands but this time on the remote server. Because the UCSD computers have Java set up, this should work for everyone.
 
-Type `ls` in the command prompt and you should see the file in the home directory!
+If you type `ls` in the command prompt, you should see the file in the home directory!
 
 ![image](Screenshot2022-01-13182320.png)
 <br/>
@@ -97,25 +98,25 @@ Type `ls` in the command prompt and you should see the file in the home director
 
 We can make signing into the UCSD server faster and easier by getting rid of our password altogether, and we do so by using the ssh keys.
 
-Follow this next code as shown here, starting with `ssh-keygen`:
+Follow this next code as shown here, starting with `ssh-keygen`. Read carefully and make changes according to the name of your user.
 
 ![image](Screenshot2022-01-13184426.png)
 
-We need to copy this to our accounts on the UCSD server.
-Follow this code now, starting with `ssh cs15lwi22zz@ieng6.ucsd.edu`. Remember to change `zz` to your account's letters.
+We need to copy this to our account on the UCSD server.
+Follow this code now, starting with `ssh cs15lwi22zz@ieng6.ucsd.edu`. Remember to change **zz** to your account's letters.
 
 ![image](Screenshot2022-01-13185127.png)
 
-Now, we can get ahold of the server without entering any password!
+When it asks for the password, press your enter key to save the action as your new password. Now, we can get ahold of the server without entering any password!
 <br/>
 ### **Step 6:**
 #### Optimizing Remote Running
 
-It is time to combine everything we have learned together! We know how to run code on the remote server without needing to etner a password and we know what a few command lines can do!
+It is time to combine everything we have learned together! We know how to run code on the remote server without needing to enter a password and we know what a few command lines can do!
 
 Here are some more shortcuts:
 
-This format will allow us to log on to the remote server and run code in one line!
+This format will allow us to log onto the remote server and run code in one line!
 ```
 ssh cs15lwi22zz@ieng6.ucsd.edu "ls"
 ```
@@ -125,3 +126,6 @@ This format is a way to write multiple commands in one line!
 javac WhereAmI.java; java WhereAmI
 ```
 ![image](Screenshot2022-01-13190700.png)
+
+---
+### **Congratulations! You have finished the tutorial!** :star:
