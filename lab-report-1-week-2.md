@@ -1,5 +1,4 @@
 # **LAB 1 REPORT**
-#### (A16282947)
 <br/>
 
 Hello 15L students! The following is a tutorial on how to log into a course-specific account on ieng6. To do so, we will cover these few tasks:
