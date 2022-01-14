@@ -69,7 +69,7 @@ Like this:
 ![image](Screenshot2022-01-13180013.png)
 <br/>
 ### **Step 4:**
-#### Moving Files with scp
+#### Moving Files with "scp"
 
 You are almost done! Our goal is to be able to work between our computer and the remote computer, so one skill that is important is copying files over. We can do this by using the command `scp`.
 
@@ -95,8 +95,19 @@ Type `ls` in the command prompt and you should see the file in the home director
 ### **Step 5:**
 #### Setting an SSH Key
 
+We can make signing into the UCSD server faster and easier by getting rid of our password altogether, and we do so by using the ssh keys.
 
+Follow this next code as shown here, starting with `ssh-keygen`:
 
-<!--
-Optimizing Remote Running
--->
+![image](Screenshot2022-01-13184426.png)
+
+We need to copy this to our accounts on the UCSD server.
+Follow this code now, starting with `ssh cs15lwi22zz@ieng6.ucsd.edu`. Remember to change `zz` to your account's letters.
+
+![image](Screenshot2022-01-13185127.png)
+
+Now, we can get ahold of the server without entering any password!
+<br/>
+### **Step 6:**
+#### Optimizing Remote Running
+
