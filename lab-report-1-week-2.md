@@ -128,4 +128,4 @@ javac WhereAmI.java; java WhereAmI
 ![image](Screenshot2022-01-13190700.png)
 
 ---
-### **Congratulations! You have finished the tutorial!** :star:
+### **Congratulations! You have finished the tutorial!** ✔️
