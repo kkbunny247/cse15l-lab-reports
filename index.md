@@ -1,3 +1,3 @@
-# Kendra's Lab Report Links
+# Kendra's Lab Reports
 
-* [Link](https://kkbunny247.github.io/cse15l-lab-reports/lab-report-1-week-2.html)
+* Lab Report 1 - Week 2: [Link](https://kkbunny247.github.io/cse15l-lab-reports/lab-report-1-week-2.html)
