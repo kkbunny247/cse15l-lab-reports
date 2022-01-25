@@ -159,7 +159,6 @@ Your top arrow key or `PgUp` also lets you repeat past command line entries!
 
 
 Happy coding!
-
 <br/>
 
 ---
