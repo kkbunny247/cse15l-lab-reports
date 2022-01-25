@@ -146,8 +146,8 @@ ssh cs15lwi22zz@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
 Lastly, a tip for running code efficiently is utilizing `Tab` on your keyboard! Here are side by side shots of using the `Tab` key.
 
 <p align="center">
-  <img src="Screenshot2022-01-25144828.png" width="555" />
-  <img src="Screenshot2022-01-25144853.png" width="555" /> 
+  <img src="Screenshot2022-01-25144828.png" width="500" />
+  <img src="Screenshot2022-01-25144853.png" width="500" /> 
 </p>
 
 - Start with your copy of `ssh cs15lwi22zz@ieng6.ucsd.edu`.
