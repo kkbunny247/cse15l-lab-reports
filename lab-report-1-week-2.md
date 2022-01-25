@@ -132,7 +132,29 @@ This format is a way to write multiple commands in one line!
 ```
 javac WhereAmI.java; java WhereAmI
 ```
+![image](Screenshot2022-01-25141516.png)
+
+Thus, the fastest shortcut would be the following, which if you utilize `Ctrl C` and `Ctrl V` on your keyboard to copy `ssh cs15lwi22zz@ieng6.ucsd.edu`, you can be done in **6 keystrokes** depending on your input of command lines!
+```
+ssh cs15lwi22zz@ieng6.ucsd.edu "________;________"
+```
+```
+ssh cs15lwi22zz@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
+```
 ![image](Screenshot2022-01-13190700.png)
+
+Lastly, a tip for running code efficiently is utilizing `Tab` on your keyboard! Here are side by side shots of using the `Tab` key.
+
+![image](Screenshot2022-01-25142501.png) ![image](Screenshot2022-01-25142539.png)
+
+
+- Start with your copy of `ssh cs15lwi22zz@ieng6.ucsd.edu`.
+- Enter `javac W` and press `Tab`.
+- Enter `; java W` and press `Tab` and `Enter`.
+
+Your top arrow key or `PgUp` also lets you repeat past command line entries!
+
+Happy coding!
 
 <br/>
 
