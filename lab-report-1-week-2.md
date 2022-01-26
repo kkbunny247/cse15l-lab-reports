@@ -134,7 +134,7 @@ javac WhereAmI.java; java WhereAmI
 ```
 ![image](Screenshot2022-01-25141516.png)
 
-Thus, the fastest shortcut would be the following, which if you utilize `Ctrl C` and `Ctrl V` on your keyboard to copy 
+Thus, the fastest shortcut would be the following, which if you utilize `Ctrl C` and `Ctrl V` on your keyboard to copy
 `ssh cs15lwi22zz@ieng6.ucsd.edu`, you can be done in **6 keystrokes** depending on your input of command lines!
 ```
 ssh cs15lwi22zz@ieng6.ucsd.edu "________;________"
