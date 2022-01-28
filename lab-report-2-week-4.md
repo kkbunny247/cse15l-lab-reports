@@ -1,0 +1,205 @@
+# **LAB 2 REPORT**
+
+
+We were originally running `MarkdownParse.java` to pull links from Markdown files:
+```
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+
+public class MarkdownParse {
+    public static ArrayList<String> getLinks(String markdown) {
+        ArrayList<String> toReturn = new ArrayList<>();
+        
+        int currentIndex = 0;
+        while(currentIndex < markdown.length()) {
+            int nextOpenBracket = markdown.indexOf("[", currentIndex);
+            System.out.println(currentIndex);
+
+            int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
+            int openParen = markdown.indexOf("(", nextCloseBracket);
+            int closeParen = markdown.indexOf(")", openParen);
+            toReturn.add(markdown.substring(openParen + 1, closeParen));
+            currentIndex = closeParen + 1;
+            
+            System.out.println(currentIndex);
+        }
+        return toReturn;
+        
+    }
+    public static void main(String[] args) throws IOException {
+		Path fileName = Path.of(args[0]);
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = getLinks(contents);
+        System.out.println(links);
+    }
+}
+```
+In a Markdown file like `test-file.md`, we would receive this output.
+```
+[a link!](https://something.com)
+[another link!](some-page.html)
+```
+
+`0
+43
+43
+76
+[https://something.com, some-page.html]
+
+<br/>
+
+### **Step 1:**
+#### Installing VScode
+Download "Visual Studio Code" from this link: [https://code.visualstudio.com/](https://code.visualstudio.com/)
+
+Follow the instructions according to the website; this process will differ depending on if you operate on, for example, OSX or Windows.
+
+![image](Screenshot2022-01-13141746.png)
+
+Your setup should look something like this!
+<br/>
+<br/>
+
+### **Step 2:**
+#### Remotely Connecting
+<br/>
+
+> FOR WINDOWS USERS ONLY:
+- Before getting to the UCSD server, we have to install a program called OpenSSH, which allows us to connect remotely.
+- Navigate to "Optional Features" in "Settings." Search and install OpenSSH Client and OpenSSH Server. When you are done, proceed with the next steps!
+
+<br/>
+
+Find your account for the CSE 15L class here: [https://sdacs.ucsd.edu/~icc/index.php](https://sdacs.ucsd.edu/~icc/index.php)
+
+The course is located under "Additional Accounts." Locate your account. It will be something similar to cs15lwi22**zz**@ieng6.ucsd.edu, except the "**zz**" will be letters specific to your UCSD account.
+
+Next, open a terminal in Visual Studio Code or open a Command Prompt.
+Input the following command: `ssh cs15lwi22zz@ieng6.ucsd.edu`
+
+This message may pop up:
+```
+The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
+RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+Type in yes, press enter, and give your password (it will not appear on the screen for security reasons)!
+
+When your screen looks like this, you are ready to move on!
+
+![image](Screenshot2022-01-13175112.png)
+<br/>
+<br/>
+
+### **Step 3:**
+#### Trying Some Commands
+
+Give yourself sometime to play around with the Visual Studio Code terminal or Command Prompt, both on the client (your computer) and the server (the remote connection). To get on the UCSD server, repeat the `ssh cs15lwi22zz@ieng6.ucsd.edu` command from Step 2!
+
+Here are some commands to try:
+
+`cd ~`<br/>
+`cd`<br/>
+`cd dir`<br/>
+`ls -al`<br/>
+`pwd`<br/>
+
+![image](Screenshot2022-01-13180013.png)
+<br/>
+<br/>
+
+### **Step 4:**
+#### Moving Files with "scp"
+
+You are almost done! Our goal is to be able to work between our computer and the remote computer, so one skill that is important is copying files over. We can do this by using the command `scp`.
+
+Create a file `WhereAmI.java` with the following contents:
+```
+class WhereAmI {
+  public static void main(String[] args) {
+    System.out.println(System.getProperty("os.name"));
+    System.out.println(System.getProperty("user.name"));
+    System.out.println(System.getProperty("user.home"));
+    System.out.println(System.getProperty("user.dir"));
+  }
+}
+```
+Compile this file with the command `javac` and then run it with the command `java` **on your computer**. Note that this will only work if you have Java already installed.
+
+Repeat these commands but this time on the remote server. Because the UCSD computers have Java set up, this should work for everyone.
+
+If you call the command `ls`, you should see the file in the home directory!
+
+![image](Screenshot2022-01-13182320.png)
+<br/>
+<br/>
+
+### **Step 5:**
+#### Setting an SSH Key
+
+We can make signing into the UCSD server faster and easier by getting rid of our password altogether, and we do so by using the ssh keys.
+
+Follow this next code as shown here, starting with `ssh-keygen`. Read carefully and make changes according to the name of your user.
+
+![image](Screenshot2022-01-13184426.png)
+
+We need to copy this to our account on the UCSD server.
+Follow this code now, starting with `ssh cs15lwi22zz@ieng6.ucsd.edu`. Remember to change **zz** to your account's letters.
+
+![image](Screenshot2022-01-13185127.png)
+
+When it asks for the password, press your enter key to save the action as your new password. Now, we can get ahold of the server without entering any password!
+<br/>
+<br/>
+
+### **Step 6:**
+#### Optimizing Remote Running
+
+It is time to combine everything we have learned together! We know how to run code on the remote server without needing to enter a password and we know what a few command lines can do!
+
+Here are some more shortcuts:
+
+This format will allow us to log onto the remote server and run code in one line!
+```
+ssh cs15lwi22zz@ieng6.ucsd.edu "ls"
+```
+![image](Screenshot2022-01-13185846.png)
+This format is a way to write multiple commands in one line!
+```
+javac WhereAmI.java; java WhereAmI
+```
+![image](Screenshot2022-01-25141516.png)
+
+Thus, the fastest shortcut would be the following, which if you utilize `Ctrl C` and `Ctrl V` on your keyboard to copy
+`ssh cs15lwi22zz@ieng6.ucsd.edu`, you can be done in **6 keystrokes** depending on your input of command lines!
+```
+ssh cs15lwi22zz@ieng6.ucsd.edu "________;________"
+```
+```
+ssh cs15lwi22zz@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
+```
+![image](Screenshot2022-01-13190700.png)
+
+Lastly, a tip for running code efficiently is utilizing `Tab` on your keyboard! Here are side by side shots of using the `Tab` key.
+
+<p align="center">
+  <img src="Screenshot2022-01-25144828.png" width="450" />
+  <img src="Screenshot2022-01-25144853.png" width="450" /> 
+</p>
+
+- Start with your copy of `ssh cs15lwi22zz@ieng6.ucsd.edu`.
+- Enter `javac W` and press `Tab`.
+- Enter `; java W` and press `Tab` and `Enter`.
+
+
+Your top arrow key or `PgUp` also lets you repeat past command line entries!
+
+
+Happy coding!
+<br/>
+
+---
+
+### **Congratulations! You have finished the tutorial!** ✔️
