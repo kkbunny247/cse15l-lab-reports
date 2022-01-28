@@ -57,7 +57,7 @@ However, when we run the code with further Markdown files, said output can be un
 ### **Example 1:**
 ####  Running a File With an Image
 
-In Markdown, a link is formatted like `[title](https://www.example.com)`, but because our code is looking for brackets and parantheses, an image, or `![alt text](image.jpg)` will be considered a link.
+In Markdown, a link is formatted like `[title](https://www.example.com)`, but because our code is looking for brackets and parentheses, an image, or `![alt text](image.jpg)` will be considered a link.
 
 This is **test2-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md) 
 
@@ -77,7 +77,7 @@ We can fix our code by adding an *if statement* to make sure that the first char
 
 <br/>
 
-> **- THE BUG:** We were not specifically defining how the code should identify a link. As long as an input had an opening bracket ( `[` ) , a closing braket ( `]` ) , and paratheses ( `(` `)` ), it was added to the arraylist. <br/> <br/> 
+> **- THE BUG:** We were not specifically defining how the code should identify a link. As long as an input had an opening bracket ( `[` ) , a closing braket ( `]` ) , and paretheses ( `(` `)` ), it was added to the arraylist. <br/> <br/> 
 **- THE SYMPTOM:** An input that was not a link like (image.jpeg) was included. <br/> <br/> 
 **- THE FIX:**  `nextOpenBracket == 0` is considering if the link is included on a new line, while `markdown.charAt(nextOpenBracket - 1) != '!')` is considering if the link has characters in front of it. In both cases, we are restricting what can appear before the open bracket to ensure that it will be a link that the code is scanning.
 
@@ -86,7 +86,7 @@ We can fix our code by adding an *if statement* to make sure that the first char
 ### **Example 2:**
 #### Interrupting the Link Format
 
-What happens if there were words in between our brackets and parantheses? Again, a link is formatted like `[title](https://www.example.com)`, but our code does not ensure that there is nothing from `]` to `(`. 
+What happens if there were words in between our brackets and parentheses? Again, a link is formatted like `[title](https://www.example.com)`, but our code does not ensure that there is nothing from `]` to `(`. 
 
 This is **test3-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md) 
 
@@ -105,16 +105,16 @@ We can fix our code by adding to our *if statement*. This will make sure that `(
 
 <br/>
 
-> **- THE BUG:** We did not specify that there should be nothing in between our brackets and parantheses. Our code was only looking for an opening bracket ( `[` ) , a closing braket ( `]` ) , and a set of paratheses ( `(` `)` ). <br/> <br/> 
+> **- THE BUG:** We did not specify that there should be nothing in between our brackets and parentheses. Our code was only looking for an opening bracket ( `[` ) , a closing braket ( `]` ) , and a set of paretheses ( `(` `)` ). <br/> <br/> 
 **- THE SYMPTOM:** An input that was not a link or formatted like one like `[link] words (www.something.com)` was included. <br/> <br/> 
-**- THE FIX:**  Adding onto the previous code changes with `&&`, `nextCloseBracket == openParen - 1` looks to find that the the closing bracket is neighboring the open paranthesis. We are getting to be more restrictive of what can be passed as a link by clarifying its structure in the Markdown file.
+**- THE FIX:** Adding onto the previous code changes with `&&`, `nextCloseBracket == openParen - 1` looks to find that the the closing bracket is neighboring the open parenthesis. We are getting to be more restrictive of what can be passed as a link by clarifying its structure in the Markdown file.
 
 <br/>
 
 ### **Example 3:**
 #### Spacey Links?
 
-A valid link does not have spaces, so we can modify our code to start returning only valid links. We can do this by searching for spaces in between our parantheses. 
+A valid link does not have spaces, so we can modify our code to start returning only valid links. We can do this by searching for spaces in between our parentheses. 
 
 This is **test4-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test4-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test4-file.md) 
 
@@ -127,15 +127,15 @@ We will end up with something like this, which is incorrect since we have decide
 
 ![image](Screenshot2022-01-27182651.png)
 
-We can fix our code by adding an inner *if statement* to check for no spaces in between our parantheses. 
+We can fix our code by adding an inner *if statement* to check for no spaces in between our parentheses. 
 
-![image](Screenshot2022-01-27180728.png)
+![image](Screenshot2022-01-27191614.png)
 
 <br/>
 
-> **- THE BUG:** We did not specify that there should be nothing in between our brackets and parantheses. Our code was only looking for an opening bracket ( `[` ) , a closing braket ( `]` ) , and a set of paratheses ( `(` `)` ). <br/> <br/> 
-**- THE SYMPTOM:** An input that was not a link or formatted like one like `[link] words (www.something.com)` was included. <br/> <br/> 
-**- THE FIX:**  Adding onto the previous code changes with `&&`, `nextCloseBracket == openParen - 1` looks to find that the the closing bracket is neighboring the open paranthesis. We are getting to be more restrictive of what can be passed as a link by clarifying its structure in the Markdown file.
+> **- THE BUG:** We did not limit what kind of links should be returned. Initially, our code was checking for links by Markdown's implementation of a link. This leaves our code to accept inputs with both working and not working links. <br/> <br/> 
+**- THE SYMPTOM:** A link is not valid and working if it includes spaces, yet it was included. <br/> <br/> 
+**- THE FIX:** First, `String link = markdown.substring(openParen, closeParen)` was added. This sets `link` to be what is in the paretheses of something like `[link] words (www.something.com)`. Then, the new if statement has `!link.contains(" ")`, which checks `link` for spaces. We get past the if statement only when `link` does not contain spaces.
 
 <br/>
 
