@@ -80,35 +80,30 @@ We can fix our code by adding an *if statement* to make sure that the first char
 
 <br/>
 
-### **Step 2:**
-#### Remotely Connecting
+### **Example 2:**
+#### Words Interrupting Link Format
 <br/>
 
-> FOR WINDOWS USERS ONLY:
-- Before getting to the UCSD server, we have to install a program called OpenSSH, which allows us to connect remotely.
-- Navigate to "Optional Features" in "Settings." Search and install OpenSSH Client and OpenSSH Server. When you are done, proceed with the next steps!
+What happens if there were words in between our brackets and parantheses? Our code does not ensure that there is nothing interrupting our link because, again, a link is formatted like `[title](https://www.example.com)`.
 
-<br/>
+This is **test3-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md)
 
-Find your account for the CSE 15L class here: [https://sdacs.ucsd.edu/~icc/index.php](https://sdacs.ucsd.edu/~icc/index.php)
-
-The course is located under "Additional Accounts." Locate your account. It will be something similar to cs15lwi22**zz**@ieng6.ucsd.edu, except the "**zz**" will be letters specific to your UCSD account.
-
-Next, open a terminal in Visual Studio Code or open a Command Prompt.
-Input the following command: `ssh cs15lwi22zz@ieng6.ucsd.edu`
-
-This message may pop up:
 ```
-The authenticity of host 'ieng6.ucsd.edu (128.54.70.227)' can't be established.
-RSA key fingerprint is SHA256:ksruYwhnYH+sySHnHAtLUHngrPEyZTDl/1x99wUQcec.
-Are you sure you want to continue connecting (yes/no/[fingerprint])?
+[link](link.com)
+![image](image.jpeg)
 ```
-Type in yes, press enter, and give your password (it will not appear on the screen for security reasons)!
+We will end up with something like this, which is incorrect since it is producing an output where `image.jpeg` is a link.
 
-When your screen looks like this, you are ready to move on!
+![image](Screenshot2022-01-27171748.png)
 
-![image](Screenshot2022-01-13175112.png)
-<br/>
+We can fix our code by adding an *if statement* to make sure that the first character of the line is `[` or that the character before our opening bracket is not `!`. 
+
+![image](Screenshot2022-01-27172101.png)
+
+> **- THE BUG:** We were not specifically defining how the code should identify a link. As long as an input had an opening bracket ( `[` ) , a closing braket ( `]` ) , and paratheses ( `(` `)` ), it was added to the arraylist. <br/> 
+**- THE SYMPTOM:** An input that was not a link like (image.jpeg) was included. <br/>
+**- THE FIX:**  `nextOpenBracket == 0` is considering if the link is included on a new line, while `markdown.charAt(nextOpenBracket - 1) != '!')` is considering if the link has characters in front of it. In both cases, we are restricting what can appear before the open bracket to ensure that it will be a link that the code is scanning.
+
 <br/>
 
 ### **Step 3:**
