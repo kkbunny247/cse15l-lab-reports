@@ -57,9 +57,11 @@ However, when we run the code with further Markdown files, said output can be un
 ### **Example 1:**
 ####  Running a File With an Image
 
-In Markdown, a link is formatted like `[title](https://www.example.com)`, but because our code is looking for parantheses and brackets, an image, or `![alt text](image.jpg)` will be considered a link.
+In Markdown, a link is formatted like `[title](https://www.example.com)`, but because our code is looking for brackets and parantheses, an image, or `![alt text](image.jpg)` will be considered a link.
 
-This is **test2-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md)
+This is **test2-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md) 
+
+*for better viewing:* [https://github.com/kkbunny247/markdown-parse/blame/main/test2-file.md](https://github.com/kkbunny247/markdown-parse/blame/main/test2-file.md) 
 
 ```
 [link](link.com)
@@ -86,7 +88,9 @@ We can fix our code by adding an *if statement* to make sure that the first char
 
 What happens if there were words in between our brackets and parantheses? Again, a link is formatted like `[title](https://www.example.com)`, but our code does not ensure that there is nothing from `]` to `(`. 
 
-This is **test3-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md)
+This is **test3-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md) 
+
+*for better viewing:* [https://github.com/kkbunny247/markdown-parse/blame/main/test3-file.md](https://github.com/kkbunny247/markdown-parse/blame/main/test3-file.md)
 
 ```
 [link] words (www.something.com)
@@ -105,20 +109,30 @@ We can fix our code by adding to our *if statement*. This will make sure that `(
 
 <br/>
 
-### **Step 3:**
-#### Trying Some Commands
+### **Example 3:**
+#### Spacey Links?
 
-Give yourself sometime to play around with the Visual Studio Code terminal or Command Prompt, both on the client (your computer) and the server (the remote connection). To get on the UCSD server, repeat the `ssh cs15lwi22zz@ieng6.ucsd.edu` command from Step 2!
+A valid link does not have spaces, so we can modify our code to start returning only valid links. We can do this by searching for spaces in between our parantheses. 
 
-Here are some commands to try:
+This is **test4-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test4-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test4-file.md) 
 
-`cd ~`<br/>
-`cd`<br/>
-`cd dir`<br/>
-`ls -al`<br/>
-`pwd`<br/>
+*for better viewing:* [https://github.com/kkbunny247/markdown-parse/blame/main/test4-file.md](https://github.com/kkbunny247/markdown-parse/blame/main/test4-file.md)
 
-![image](Screenshot2022-01-13180013.png)
+```
+[link](not a link ! ! !)
+```
+We will end up with something like this, which is incorrect since we have decided that our code should only return valid links. 
+
+![image](Screenshot2022-01-27182651.png)
+
+We can fix our code by adding another *if statement* to check for no spaces in between our parantheses. 
+
+![image](Screenshot2022-01-27180728.png)
+
+> **- THE BUG:** We did not specify that there should be nothing in between our brackets and parantheses. Our code was only looking for an opening bracket ( `[` ) , a closing braket ( `]` ) , and a set of paratheses ( `(` `)` ). <br/> <br/> 
+**- THE SYMPTOM:** An input that was not a link or formatted like one like `[link] words (www.something.com)` was included. <br/> <br/> 
+**- THE FIX:**  Adding onto the previous code changes with `&&`, `nextCloseBracket == openParen - 1` looks to find that the the closing bracket is neighboring the open paranthesis. We are getting to be more restrictive of what can be passed as a link by clarifying its structure in the Markdown file.
+
 <br/>
 <br/>
 
