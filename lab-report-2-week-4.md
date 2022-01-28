@@ -103,6 +103,8 @@ We can fix our code by adding to our *if statement*. This will make sure that `(
 
 ![image](Screenshot2022-01-27180728.png)
 
+<br/>
+
 > **- THE BUG:** We did not specify that there should be nothing in between our brackets and parantheses. Our code was only looking for an opening bracket ( `[` ) , a closing braket ( `]` ) , and a set of paratheses ( `(` `)` ). <br/> <br/> 
 **- THE SYMPTOM:** An input that was not a link or formatted like one like `[link] words (www.something.com)` was included. <br/> <br/> 
 **- THE FIX:**  Adding onto the previous code changes with `&&`, `nextCloseBracket == openParen - 1` looks to find that the the closing bracket is neighboring the open paranthesis. We are getting to be more restrictive of what can be passed as a link by clarifying its structure in the Markdown file.
@@ -125,15 +127,16 @@ We will end up with something like this, which is incorrect since we have decide
 
 ![image](Screenshot2022-01-27182651.png)
 
-We can fix our code by adding another *if statement* to check for no spaces in between our parantheses. 
+We can fix our code by adding an inner *if statement* to check for no spaces in between our parantheses. 
 
 ![image](Screenshot2022-01-27180728.png)
+
+<br/>
 
 > **- THE BUG:** We did not specify that there should be nothing in between our brackets and parantheses. Our code was only looking for an opening bracket ( `[` ) , a closing braket ( `]` ) , and a set of paratheses ( `(` `)` ). <br/> <br/> 
 **- THE SYMPTOM:** An input that was not a link or formatted like one like `[link] words (www.something.com)` was included. <br/> <br/> 
 **- THE FIX:**  Adding onto the previous code changes with `&&`, `nextCloseBracket == openParen - 1` looks to find that the the closing bracket is neighboring the open paranthesis. We are getting to be more restrictive of what can be passed as a link by clarifying its structure in the Markdown file.
 
-<br/>
 <br/>
 
 Happy coding!
