@@ -56,7 +56,6 @@ However, when we run the code with further Markdown files, said output can be un
 
 ### **Example 1:**
 ####  Running a File With an Image
-<br/>
 
 In Markdown, a link is formatted like `[title](https://www.example.com)`, but because our code is looking for parantheses and brackets, an image, or `![alt text](image.jpg)` will be considered a link.
 
@@ -74,27 +73,27 @@ We can fix our code by adding an *if statement* to make sure that the first char
 
 ![image](Screenshot2022-01-27172101.png)
 
-> **- THE BUG:** We were not specifically defining how the code should identify a link. As long as an input had an opening bracket ( `[` ) , a closing braket ( `]` ) , and paratheses ( `(` `)` ), it was added to the arraylist. <br/> 
-**- THE SYMPTOM:** An input that was not a link like (image.jpeg) was included. <br/>
+<br/>
+
+> **- THE BUG:** We were not specifically defining how the code should identify a link. As long as an input had an opening bracket ( `[` ) , a closing braket ( `]` ) , and paratheses ( `(` `)` ), it was added to the arraylist. <br/> <br/> 
+**- THE SYMPTOM:** An input that was not a link like (image.jpeg) was included. <br/> <br/> 
 **- THE FIX:**  `nextOpenBracket == 0` is considering if the link is included on a new line, while `markdown.charAt(nextOpenBracket - 1) != '!')` is considering if the link has characters in front of it. In both cases, we are restricting what can appear before the open bracket to ensure that it will be a link that the code is scanning.
 
 <br/>
 
 ### **Example 2:**
-#### Words Interrupting Link Format
-<br/>
+#### Interrupting the Link Format
 
-What happens if there were words in between our brackets and parantheses? Our code does not ensure that there is nothing interrupting our link because, again, a link is formatted like `[title](https://www.example.com)`.
+What happens if there were words in between our brackets and parantheses? Again, a link is formatted like `[title](https://www.example.com)`, but our code does not ensure that there is nothing from `]` to `(`. 
 
 This is **test3-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test3-file.md)
 
 ```
-[link](link.com)
-![image](image.jpeg)
+[link] words (www.something.com)
 ```
-We will end up with something like this, which is incorrect since it is producing an output where `image.jpeg` is a link.
+We will end up with something like this, which is incorrect since our input is not really a link. 
 
-![image](Screenshot2022-01-27171748.png)
+![image](Screenshot2022-01-27180244.png)
 
 We can fix our code by adding an *if statement* to make sure that the first character of the line is `[` or that the character before our opening bracket is not `!`. 
 
