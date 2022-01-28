@@ -22,7 +22,7 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
-            
+
             System.out.println(currentIndex);
         }
         return toReturn;
@@ -42,24 +42,32 @@ In a Markdown file like `test-file.md`, we would receive this output.
 [another link!](some-page.html)
 ```
 
-`0
-43
-43
-76
-[https://something.com, some-page.html]
+`0`<br/>
+`43`<br/>
+`43`<br/>
+`76`<br/>
+`[https://something.com, some-page.html]`<br/>
+
+The numbers are the index at every change, while the text within the brackets are what is recognized as a link. 
+
+However, when we run the code with further Markdown files, said output can be unexpected and unwanted. Here are 3 examples where the code is adjusted to give accurate reports of any links found within a Markdown file.
 
 <br/>
 
-### **Step 1:**
-#### Installing VScode
-Download "Visual Studio Code" from this link: [https://code.visualstudio.com/](https://code.visualstudio.com/)
+### **Example 1:**
+####  Running a File With an Image
+<br/>
+
+In Markdown, a file is formatted like `[title](https://www.example.com)`, but because our code is looking for the parantheses and brackets
+
+  image
 
 Follow the instructions according to the website; this process will differ depending on if you operate on, for example, OSX or Windows.
 
 ![image](Screenshot2022-01-13141746.png)
 
 Your setup should look something like this!
-<br/>
+
 <br/>
 
 ### **Step 2:**
