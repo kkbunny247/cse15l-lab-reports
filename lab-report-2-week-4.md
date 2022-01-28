@@ -58,15 +58,21 @@ However, when we run the code with further Markdown files, said output can be un
 ####  Running a File With an Image
 <br/>
 
-In Markdown, a file is formatted like `[title](https://www.example.com)`, but because our code is looking for the parantheses and brackets
+In Markdown, a link is formatted like `[title](https://www.example.com)`, but because our code is looking for the parantheses and brackets, an image, or `![alt text](image.jpg)` will considered a link.
 
-  image
+This is **test2-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md)
 
-Follow the instructions according to the website; this process will differ depending on if you operate on, for example, OSX or Windows.
+```
+[link](link.com)
+![image](image.jpeg)
+```
+We will end up with something like this, which is incorrect since it is producing an output where `image.jpeg` is a link.
 
-![image](Screenshot2022-01-13141746.png)
+![image](Screenshot2022-01-27171748.png)
 
-Your setup should look something like this!
+We can fix our code by adding an *if statement* to make sure that the first character of the line is `[` or that the character before our opening bracket is not `!`. 
+
+![image](Screenshot2022-01-27172101.png)
 
 <br/>
 
@@ -118,96 +124,4 @@ Here are some commands to try:
 <br/>
 <br/>
 
-### **Step 4:**
-#### Moving Files with "scp"
-
-You are almost done! Our goal is to be able to work between our computer and the remote computer, so one skill that is important is copying files over. We can do this by using the command `scp`.
-
-Create a file `WhereAmI.java` with the following contents:
-```
-class WhereAmI {
-  public static void main(String[] args) {
-    System.out.println(System.getProperty("os.name"));
-    System.out.println(System.getProperty("user.name"));
-    System.out.println(System.getProperty("user.home"));
-    System.out.println(System.getProperty("user.dir"));
-  }
-}
-```
-Compile this file with the command `javac` and then run it with the command `java` **on your computer**. Note that this will only work if you have Java already installed.
-
-Repeat these commands but this time on the remote server. Because the UCSD computers have Java set up, this should work for everyone.
-
-If you call the command `ls`, you should see the file in the home directory!
-
-![image](Screenshot2022-01-13182320.png)
-<br/>
-<br/>
-
-### **Step 5:**
-#### Setting an SSH Key
-
-We can make signing into the UCSD server faster and easier by getting rid of our password altogether, and we do so by using the ssh keys.
-
-Follow this next code as shown here, starting with `ssh-keygen`. Read carefully and make changes according to the name of your user.
-
-![image](Screenshot2022-01-13184426.png)
-
-We need to copy this to our account on the UCSD server.
-Follow this code now, starting with `ssh cs15lwi22zz@ieng6.ucsd.edu`. Remember to change **zz** to your account's letters.
-
-![image](Screenshot2022-01-13185127.png)
-
-When it asks for the password, press your enter key to save the action as your new password. Now, we can get ahold of the server without entering any password!
-<br/>
-<br/>
-
-### **Step 6:**
-#### Optimizing Remote Running
-
-It is time to combine everything we have learned together! We know how to run code on the remote server without needing to enter a password and we know what a few command lines can do!
-
-Here are some more shortcuts:
-
-This format will allow us to log onto the remote server and run code in one line!
-```
-ssh cs15lwi22zz@ieng6.ucsd.edu "ls"
-```
-![image](Screenshot2022-01-13185846.png)
-This format is a way to write multiple commands in one line!
-```
-javac WhereAmI.java; java WhereAmI
-```
-![image](Screenshot2022-01-25141516.png)
-
-Thus, the fastest shortcut would be the following, which if you utilize `Ctrl C` and `Ctrl V` on your keyboard to copy
-`ssh cs15lwi22zz@ieng6.ucsd.edu`, you can be done in **6 keystrokes** depending on your input of command lines!
-```
-ssh cs15lwi22zz@ieng6.ucsd.edu "________;________"
-```
-```
-ssh cs15lwi22zz@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"
-```
-![image](Screenshot2022-01-13190700.png)
-
-Lastly, a tip for running code efficiently is utilizing `Tab` on your keyboard! Here are side by side shots of using the `Tab` key.
-
-<p align="center">
-  <img src="Screenshot2022-01-25144828.png" width="450" />
-  <img src="Screenshot2022-01-25144853.png" width="450" /> 
-</p>
-
-- Start with your copy of `ssh cs15lwi22zz@ieng6.ucsd.edu`.
-- Enter `javac W` and press `Tab`.
-- Enter `; java W` and press `Tab` and `Enter`.
-
-
-Your top arrow key or `PgUp` also lets you repeat past command line entries!
-
-
 Happy coding!
-<br/>
-
----
-
-### **Congratulations! You have finished the tutorial!** ✔️
