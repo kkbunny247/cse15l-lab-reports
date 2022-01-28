@@ -58,7 +58,7 @@ However, when we run the code with further Markdown files, said output can be un
 ####  Running a File With an Image
 <br/>
 
-In Markdown, a link is formatted like `[title](https://www.example.com)`, but because our code is looking for the parantheses and brackets, an image, or `![alt text](image.jpg)` will considered a link.
+In Markdown, a link is formatted like `[title](https://www.example.com)`, but because our code is looking for parantheses and brackets, an image, or `![alt text](image.jpg)` will be considered a link.
 
 This is **test2-file.md** : [https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md](https://github.com/kkbunny247/markdown-parse/blob/main/test2-file.md)
 
@@ -73,6 +73,10 @@ We will end up with something like this, which is incorrect since it is producin
 We can fix our code by adding an *if statement* to make sure that the first character of the line is `[` or that the character before our opening bracket is not `!`. 
 
 ![image](Screenshot2022-01-27172101.png)
+
+> **- THE BUG:** We were not specifically defining how the code should identify a link. As long as an input had an opening bracket ( `[` ) , a closing braket ( `]` ) , and paratheses ( `(` `)` ), it was added to the arraylist. <br/> 
+**- THE SYMPTOM:** An input that was not a link like (image.jpeg) was included. <br/>
+**- THE FIX:**  `nextOpenBracket == 0` is considering if the link is included on a new line, while `markdown.charAt(nextOpenBracket - 1) != '!')` is considering if the link has characters in front of it. In both cases, we are restricting what can appear before the open bracket to ensure that it will be a link that the code is scanning.
 
 <br/>
 
