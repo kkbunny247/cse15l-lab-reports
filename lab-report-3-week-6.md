@@ -54,4 +54,4 @@ Now to connect to our remote account on the UCSD server, we can enter `ssh ieng`
 
 <br/>
 
-### **Congratulations! You have successfully created your shortcut to ieng6** 😊
+### **Congratulations! You have successfully created your shortcut to `ieng6`** 😊
