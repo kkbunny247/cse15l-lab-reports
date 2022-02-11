@@ -1,7 +1,7 @@
 # **LAB 3 REPORT**
 
 
-So far, everytime we have remotely connected to the UCSD server, we have been having to enter `ssh cs15lwi22zzz@ieng6.ucsd.edu`. Hopefully, you have been utilizing | `Ctrl C`  | `Ctrl V` | to copy-paste the line into your command prompt (unless you really remembered the entire `ssh cs15lwi22zzz@ieng6.ucsd.edu` ... ). 
+So far, everytime we have remotely connected to the UCSD server, we have been having to enter `ssh cs15lwi22zzz@ieng6.ucsd.edu`. Hopefully, you have been utilizing `Ctrl C` and `Ctrl V` to copy-paste the line into your command prompt (unless you really remembered the entire `ssh cs15lwi22zzz@ieng6.ucsd.edu` ... ). 
 
 No worries! We can make this process of logging into our `ieng6` account much faster and simpler. The following is a tutorial on streamlining our `ssh` configuration.
 <br/>
