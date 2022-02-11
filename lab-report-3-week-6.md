@@ -8,19 +8,33 @@ No worries! We can make this process of logging into our `ieng6` account much fa
 
 
 > FOR WINDOWS USERS ONLY:
-- This should have been done already because it was needed to get to the UCSD server in the first place, but if you have not done so yet, we have to install a program called OpenSSH, which allows us to connect remotely.
-- Navigate to "Optional Features" in "Settings." Search and install OpenSSH Client and OpenSSH Server. When you are done, proceed with the next steps!
+- This should be done already, as it was required to get to the UCSD server in the first place, but if you have not done so yet, please install a program called OpenSSH!
+- Find "Optional Features" in "Settings." Search and install OpenSSH Client and OpenSSH Server. When you are done, we can get on with the next steps!
 
-### **Step 1:**
-#### Installing VScode
-Download "Visual Studio Code" from this link: [https://code.visualstudio.com/](https://code.visualstudio.com/)
-
-Follow the instructions according to the website; this process will differ depending on if you operate on, for example, OSX or Windows.
-
-![image](Screenshot2022-01-13141746.png)
-
-Your setup should look something like this!
 <br/>
+
+### **Navigating to .ssh/configStep 1:**
+
+The folder `.ssh` should be in the home directory of your computer. A home directory has a path similar to this:
+```
+C:\Users\kendr\.ssh
+```
+
+Within the folder, there will be a file named `config`. If it is not there, we can simply make one now.
+
+`config` should have the following contents and be located inside the folder `.ssh`.
+```
+Host ieng6
+    HostName ieng6.ucsd.edu
+    User cs15lwi22zzz
+    IdentityFile ~/.ssh/id_rsa
+```
+Remember that the "**zzz**" are the letters specific to your UCSD account!
+
+The setup on your coding environment will look something like this.
+
+![image](Screenshot2022-02-11115503.png)
+
 <br/>
 
 ### **Step 2:**
