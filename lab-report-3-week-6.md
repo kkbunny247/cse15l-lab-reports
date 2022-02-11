@@ -6,7 +6,6 @@ So far, everytime we have want to remotely connect to the UCSD server, we have b
 No worries! We can make this process of logging into our `ieng6` account much faster and simpler. The following is a tutorial on streamlining our `ssh` configuration.
 
 <br/>
-<br/>
 
 > FOR WINDOWS USERS ONLY:
 - This should be done already, as it was required to get to the UCSD server in the first place, but if you have not done so yet, please install a program called OpenSSH!
