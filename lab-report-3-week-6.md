@@ -1,10 +1,11 @@
 # **LAB 3 REPORT**
 
 
-So far, everytime we have remotely connected to the UCSD server, we have been having to enter `ssh cs15lwi22zzz@ieng6.ucsd.edu`. Hopefully, you have been utilizing `Ctrl C` and `Ctrl V` to copy-paste the line into your command prompt (unless you really remembered the entire `ssh cs15lwi22zzz@ieng6.ucsd.edu` ... ). 
+So far, everytime we have want to remotely connect to the UCSD server, we have been having to enter `ssh cs15lwi22zzz@ieng6.ucsd.edu`. Hopefully, you have been utilizing `Ctrl C` and `Ctrl V` to copy-paste the line into your command prompt (unless you really remembered the entire `ssh cs15lwi22zzz@ieng6.ucsd.edu` ... ). 
 
 No worries! We can make this process of logging into our `ieng6` account much faster and simpler. The following is a tutorial on streamlining our `ssh` configuration.
 
+<br/>
 <br/>
 
 > FOR WINDOWS USERS ONLY:
@@ -29,9 +30,12 @@ Host ieng6
     User cs15lwi22zzz
     IdentityFile ~/.ssh/id_rsa
 ```
+```
+C:\Users\kendr\.ssh\config
+```
 Remember that the "**zzz**" are the letters specific to your UCSD account!
 
-The setup on your coding environment will look something like this.
+The setup in your coding environment will look something like this.
 
 ![image](Screenshot2022-02-11115503.png)
 
@@ -39,7 +43,7 @@ The setup on your coding environment will look something like this.
 
 ### **Running ssh ieng6**
 
-Now to connected to our remote account on the UCSD server, we can enter `ssh ieng`!
+Now to connect to our remote account on the UCSD server, we can enter `ssh ieng`!
 
 #### **before**
 
@@ -50,4 +54,4 @@ Now to connected to our remote account on the UCSD server, we can enter `ssh ien
 
 <br/>
 
-### **Congratulations! You have successfully created a shortcut to `ssh cs15lwi22zzz@ieng6.ucsd.edu`.** 😊
+### **Congratulations! You have successfully created your shortcut to ieng6** 😊
