@@ -22,6 +22,8 @@ C:\Users\kendr\.ssh
 
 Within the folder, there will be a file named `config`. If it is not there, we can simply make one now.
 
+<br/>
+
 `config` should have the following contents and be located inside the folder `.ssh`.
 ```
 Host ieng6
