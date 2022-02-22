@@ -55,4 +55,20 @@ Now to connect to our remote account on the UCSD server, we can enter `ssh ieng`
 
 <br/>
 
+### **Trying out `scp`**
+
+Let's try copying a file into our remote account on the UCSD server with our shortcut using `scp`  !
+
+In the directory of your file, enter this code:
+```
+scp AnyFile.java ieng6:~/
+```
+
+If we run `ls`, we can see the addition of the file into the directory of our remote account! And, we did that without having to type out `scp AnyFile.java cs15lwi22zzz@ieng6.ucsd.edu:~/` .
+
+
+![image](Screenshot2022-02-22112853.png)
+
+<br/>
+
 ### **Congratulations! You have successfully created your shortcut to `ieng6`** 😊
