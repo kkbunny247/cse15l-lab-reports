@@ -206,7 +206,29 @@ if (lastCloseBracket < lastOpenBracket) {
 #### **Test 2** 
 Our code already correctly detects the links in Line 1, and, after the corrections for Test 1, also Line 5. To account for cases where the link has nested parentheses like Line 3, an easy but more involved change would be to create a stack to make sure the parentheses are balanced. The reason it is recognized only up to **a.com((** is because our link is programmed to stop at the first appearance of a close parenthesis. 
 
+<br/>
+
 #### **Test 3**
+We can narrow down that the reason Lines 8-11 is not recognized as a link is due to the line breaks in the parentheses. To account for cases that have new lines in parentheses, you can use the String split() method to isolate the text between white spaces. Whitespaces are allowed, but line breaks are not. 
+```
+if (link.contains(" ")) {
+    if (markdown.charAt(openParen + 1) != ' ' || 
+        markdown.charAt(closeParen - 1) != ' ') {
+        return toReturn;
+    }
+    else {
+        String[] split = link.split(" ");
 
-
-Do you think there is a small (<10 lines) code change that will make your program work for snippet 3 and all related cases that have newlines in brackets and parentheses? If yes, describe the code change. If not, describe why it would be a more involved change.
+        if (markdown.charAt(openParen + 1) == ' ' 
+            && markdown.charAt(closeParen - 1) == ' ') {
+            link = split[split.length - 1];
+        }
+        if (markdown.charAt(openParen + 1) == ' ') {
+            link = split[split.length - 1];
+        }
+        else if (markdown.charAt(closeParen - 1) == ' ') {
+            link = split[0];
+        }
+    }
+}
+```
