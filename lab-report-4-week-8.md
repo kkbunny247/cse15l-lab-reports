@@ -10,7 +10,7 @@ We are going to be running more tests against our `MarkdownParse.java` file as w
 
 <br/>
 
-From the following 3 Markdown files, the code should pull the links.
+From the following 3 Markdown files, the code in `MarkdownParse` should pull the links.
 
 #### **Test 1** 
 ```
@@ -62,7 +62,7 @@ From the following 3 Markdown files, the code should pull the links.
 
 ### **Determining Our Tests**
 
-From the CommonMark demo site ([https://spec.commonmark.org/dingus/](https://spec.commonmark.org/dingus/)), we can figure out what to put in the JUnit's test in the `MarkdownParseTest.java` file.
+From the CommonMark demo site ([https://spec.commonmark.org/dingus/](https://spec.commonmark.org/dingus/)), we can figure out what is in fact accepted as a link in Markdown and determine what to put in the JUnit tests in `MarkdownParseTest.java`.
 
 #### **Test 1 Results** 
 ![image](Screenshot2022-02-23172911.png)
