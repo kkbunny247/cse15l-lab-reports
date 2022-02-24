@@ -105,7 +105,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet-1.md");
 	    String contents = Files.readString(fileName);
 
-        assertEquals(MarkdownParse.getLinks(contents), List.of("`google.com"));
+        assertEquals(List.of("`google.com"), MarkdownParse.getLinks(contents));
     }
 
     @Test
@@ -113,8 +113,8 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet-2.md");
 	    String contents = Files.readString(fileName);
 
-        assertEquals(MarkdownParse.getLinks(contents), List.of("a.com",
-            "a.com(())", "example.com"));
+        assertEquals(List.of("a.com", "a.com(())", "example.com"), 
+            MarkdownParse.getLinks(contents));
     }
 
     @Test
@@ -122,8 +122,8 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet-3.md");
 	    String contents = Files.readString(fileName);
 
-        assertEquals(MarkdownParse.getLinks(contents), 
-                List.of("https://ucsd-cse15l-w22.github.io/"));
+        assertEquals(List.of("https://ucsd-cse15l-w22.github.io/"),
+            MarkdownParse.getLinks(contents));
     }
 }
 ```
@@ -134,3 +134,10 @@ public class MarkdownParseTest {
 
 Here are the corresponding outputs of the `MarkdownParseTest.java` files.
 
+#### **MY REPOSITORY:** 
+![image](Screenshot2022-02-23183514.png)
+
+
+
+#### **REVIEWED REPOSITORY:** 
+![image](Screenshot2022-02-23183644.png)
