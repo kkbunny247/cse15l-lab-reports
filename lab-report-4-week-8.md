@@ -209,7 +209,7 @@ Our code already correctly detects the links in Line 1, and, after the correctio
 <br/>
 
 #### **Test 3**
-We can narrow down that the reason Lines 8-11 is not recognized as a link is due to the line breaks in the parentheses. To account for cases that have new lines in parentheses, you can use the String split() method to isolate the text between white spaces. Whitespaces are allowed, but line breaks are not. 
+We can narrow down that the reason Lines 8-11 is not recognized as a link is due to the line breaks in the parentheses. To account for cases that have new lines in parentheses, you can use the String trim() method to isolate the text surrounded by whitespaces. 
 ```
 if (link.contains(" ")) {
     if (markdown.charAt(openParen + 1) != ' ' || 
@@ -217,18 +217,7 @@ if (link.contains(" ")) {
         return toReturn;
     }
     else {
-        String[] split = link.split(" ");
-
-        if (markdown.charAt(openParen + 1) == ' ' 
-            && markdown.charAt(closeParen - 1) == ' ') {
-            link = split[split.length - 1];
-        }
-        if (markdown.charAt(openParen + 1) == ' ') {
-            link = split[split.length - 1];
-        }
-        else if (markdown.charAt(closeParen - 1) == ' ') {
-            link = split[0];
-        }
+        link = link.trim();
     }
 }
 ```
