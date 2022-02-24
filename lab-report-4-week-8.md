@@ -67,7 +67,7 @@ From the CommonMark demo site ([https://spec.commonmark.org/dingus/](https://spe
 #### **Test 1 Results** 
 ![image](Screenshot2022-02-23172911.png)
 
-Only Line 3, ``[another link](`google.com)`‎`` will produce a link. This link would be **`google.com**.<br/>
+Lines 3, 5, and 7 will produce a link: ``[another link](`google.com)`‎``,  ``[`cod[e`](google.com)``, and ``[`code]`](ucsd.edu)``. This links would be **`google.com**. **google.com**, and **ucsd.edu**.<br/>
 
 <br/>
 
@@ -155,7 +155,7 @@ expected:<[https://ucsd-cse15l-w22.github.io/]> but was:<[]>
 None of the tests pass again. Here are the specific errors.
 ```
 Test 1
-expected:<[`google.com]> but was:<[url.com, `google.com, google.com]>
+expected:<[`google.com, google.com, ucsd.edu]> but was:<[url.com, `google.com, google.com]>
 
 Test 2
 expected:<[a.com, a.com(()), example.com]> but was:<[a.com((]>
