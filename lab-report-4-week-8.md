@@ -130,14 +130,53 @@ public class MarkdownParseTest {
 
 <br/>
 
-### **Running and Making Changes**
+### **Running `MarkdownParseTest`**
 
 Here are the corresponding outputs of the `MarkdownParseTest.java` files.
 
 #### **MY REPOSITORY:** 
 ![image](Screenshot2022-02-23183514.png)
 
+None of the tests pass. Here are the specific errors.
+```
+Test 1
+expected:<[`google.com]> but was:<[url.com, `google.com, google.com]>
 
+Test 2
+expected:<[a.com, a.com(()), example.com]> but was:<[a.com, a.com((]>
+
+Test 3
+expected:<[https://ucsd-cse15l-w22.github.io/]> but was:<[]>
+```
 
 #### **REVIEWED REPOSITORY:** 
 ![image](Screenshot2022-02-23183644.png)
+
+None of the tests pass again. Here are the specific errors.
+```
+Test 1
+expected:<[`google.com]> but was:<[url.com, `google.com, google.com]>
+
+Test 2
+expected:<[a.com, a.com(()), example.com]> but was:<[a.com((]>
+
+Test 3
+expected:<[https://ucsd-cse15l-w22.github.io/]> but was:<[
+    https://ucsd-cse15l-w22.github.io/
+, github.com
+
+And there's still some more text after that.
+
+[this link doesn't have a closing parenthesis for a while](https://cse.ucsd.edu/
+
+
+
+]>
+```
+<br/>
+
+### **Changing Our Program**
+
+Do you think there is a small (<10 lines) code change that will make your program work for snippet 1 and all related cases that use inline code with backticks? If yes, describe the code change. If not, describe why it would be a more involved change.
+Do you think there is a small (<10 lines) code change that will make your program work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets? If yes, describe the code change. If not, describe why it would be a more involved change.
+Do you think there is a small (<10 lines) code change that will make your program work for snippet 3 and all related cases that have newlines in brackets and parentheses? If yes, describe the code change. If not, describe why it would be a more involved change.
