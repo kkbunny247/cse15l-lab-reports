@@ -62,12 +62,12 @@ From the following 3 Markdown files, the code should pull the links.
 
 ### **Determining Our Tests**
 
-From the CommonMark demo site ([https://spec.commonmark.org/dingus/](https://spec.commonmark.org/dingus/)), we can figure our what to put in the JUnit's test in our `MarkdownParseTest.java` file.
+From the CommonMark demo site ([https://spec.commonmark.org/dingus/](https://spec.commonmark.org/dingus/)), we can figure out what to put in the JUnit's test in the `MarkdownParseTest.java` file.
 
 #### **Test 1 Results** 
 ![image](Screenshot2022-02-23172911.png)
 
-Only Line 3, ``[another link](`google.com)`‎`` will produce a link. This link would be **google.com**.<br/>
+Only Line 3, ``[another link](`google.com)`‎`` will produce a link. This link would be **`google.com**.<br/>
 
 <br/>
 
@@ -81,4 +81,4 @@ Part of Line 1 and then Lines 3 and 5 will produce a link: ``[nested link](a.com
 #### **Test 3 Results** 
 ![image](Screenshot2022-02-23173514.png)
 
-Only Lines 8-11, which starts at ``[this title text is really long...`` and ends at ``https://ucsd-cse15l-w22.github.io/)`` will produce a link. This link would be **https://ucsd-cse15l-w22.github.io/**.
+Only Lines 8-11, which starts at ``[this title text is really long...`` and ends at ``https://ucsd-cse15l-w22.github.io/)`` will produce a link. This link would be **https<nolink>://ucsd-cse15l-w22.github.io/**.
