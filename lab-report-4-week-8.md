@@ -4,9 +4,9 @@
 ### **The Setup**
 
 We are going to be running more tests against our `MarkdownParse.java` file as well as another student's `MarkdownParse.java` file.
-#### **my repository:** [https://github.com/kkbunny247/markdown-parse](https://github.com/kkbunny247/markdown-parse)
+#### **MY REPOSITORY:** [https://github.com/kkbunny247/markdown-parse](https://github.com/kkbunny247/markdown-parse)
 
-#### **reviewing repository:** [https://github.com/sallada1/markdown-parse](https://code.visualstudio.com/)
+#### **REVIEWED REPOSITORY:** [https://github.com/sallada1/markdown-parse](https://code.visualstudio.com/)
 
 <br/>
 
@@ -82,3 +82,55 @@ Part of Line 1 and then Lines 3 and 5 will produce a link: ``[nested link](a.com
 ![image](Screenshot2022-02-23173514.png)
 
 Only Lines 8-11, which starts at ``[this title text is really long...`` and ends at ``https://ucsd-cse15l-w22.github.io/)`` will produce a link. This link would be **https<nolink>://ucsd-cse15l-w22.github.io/**.
+
+<br/>
+
+Thus, our tests in the `MarkdownParseTest.java` file of both repositories will look something like this.
+
+```
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MarkdownParseTest {
+
+    // ------------ Snippet Tests ---------------
+
+    @Test
+    public void snippetLinks1() throws IOException {
+        Path fileName = Path.of("snippet-1.md");
+	    String contents = Files.readString(fileName);
+
+        assertEquals(MarkdownParse.getLinks(contents), List.of("`google.com"));
+    }
+
+    @Test
+    public void snippetLinks2() throws IOException {
+        Path fileName = Path.of("snippet-2.md");
+	    String contents = Files.readString(fileName);
+
+        assertEquals(MarkdownParse.getLinks(contents), List.of("a.com",
+            "a.com(())", "example.com"));
+    }
+
+    @Test
+    public void snippetLinks3() throws IOException {
+        Path fileName = Path.of("snippet-3.md");
+	    String contents = Files.readString(fileName);
+
+        assertEquals(MarkdownParse.getLinks(contents), 
+                List.of("https://ucsd-cse15l-w22.github.io/"));
+    }
+}
+```
+
+<br/>
+
+### **Running and Making Changes**
+
+Here are the corresponding outputs of the `MarkdownParseTest.java` files.
+
