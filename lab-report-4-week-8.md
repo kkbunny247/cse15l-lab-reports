@@ -105,7 +105,8 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet-1.md");
 	    String contents = Files.readString(fileName);
 
-        assertEquals(List.of("`google.com"), MarkdownParse.getLinks(contents));
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), 
+            MarkdownParse.getLinks(contents));
     }
 
     @Test
@@ -140,7 +141,7 @@ Here are the corresponding outputs of the `MarkdownParseTest.java` files.
 None of the tests pass. Here are the specific errors.
 ```
 Test 1
-expected:<[`google.com]> but was:<[url.com, `google.com, google.com]>
+expected:<[`google.com, google.com, ucsd.edu]> but was:<[url.com, `google.com, google.com]>
 
 Test 2
 expected:<[a.com, a.com(()), example.com]> but was:<[a.com, a.com((]>
@@ -177,6 +178,35 @@ And there's still some more text after that.
 
 ### **Changing Our Program**
 
-Do you think there is a small (<10 lines) code change that will make your program work for snippet 1 and all related cases that use inline code with backticks? If yes, describe the code change. If not, describe why it would be a more involved change.
-Do you think there is a small (<10 lines) code change that will make your program work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets? If yes, describe the code change. If not, describe why it would be a more involved change.
+#### **Test 1** 
+Our code already correctly detects the links in Lines 3 and 5. To account for cases that use inline code with backticks like Line 1, we can check for what is in front of the open bracket, similar to how we checked for exclamation marks and Markdown images. Our code would check that there is no backtick before the open bracket if there is a backtick in between the brackets.
+```
+String text = markdown.substring(nextOpenBracket, lastCloseBracket);
+
+if (text.contains("`")) {
+    if (nextOpenBracket == 0 || markdown.charAt(nextOpenBracket - 1) != '`') {
+        toReturn.add(markdown.substring(openParen + 1, closeParen));
+    }
+}
+else {
+    toReturn.add(markdown.substring(openParen + 1, closeParen));
+}
+```
+For Line 7, we can approach it slightly differently because the reason it is not recognized **ucsd.edu** is the addition of `]` and not the backticks. We can add code to find the last close bracket rather than the next, and then check that the last close bracket is adjacent to a open parenthesis.
+```
+int lastCloseBracket = markdown.lastIndexOf("]", openParen);
+int lastOpenBracket = markdown.lastIndexOf("]", lastCloseBracket);
+            
+if (lastCloseBracket < lastOpenBracket) {
+    return toReturn;
+}
+```
+<br/>
+
+#### **Test 2** 
+Our code already correctly detects the links in Line 1, and, after the corrections for Test 1, also Line 5. To account for cases where the link has nested parentheses like Line 3, an easy but more involved change would be to create a stack to make sure the parentheses are balanced. The reason it is recognized only up to **a.com((** is because our link is programmed to stop at the first appearance of a close parenthesis. 
+
+#### **Test 3**
+
+
 Do you think there is a small (<10 lines) code change that will make your program work for snippet 3 and all related cases that have newlines in brackets and parentheses? If yes, describe the code change. If not, describe why it would be a more involved change.
