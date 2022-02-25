@@ -1,14 +1,14 @@
 # **LAB 4 REPORT**
 
 
-### **The Setup**
-
 We are going to be running more tests against our `MarkdownParse.java` file as well as another student's `MarkdownParse.java` file.
 #### **MY REPOSITORY:** [https://github.com/kkbunny247/markdown-parse](https://github.com/kkbunny247/markdown-parse)
 
 #### **REVIEWED REPOSITORY:** [https://github.com/sallada1/markdown-parse](https://code.visualstudio.com/)
 
 <br/>
+
+### **The Setup**
 
 From the following 3 Markdown files, the code in `MarkdownParse` should pull the links.
 
