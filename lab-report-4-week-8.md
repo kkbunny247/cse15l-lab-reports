@@ -192,7 +192,7 @@ else {
     toReturn.add(markdown.substring(openParen + 1, closeParen));
 }
 ```
-For Line 7, we can approach it slightly differently because the reason it is not recognized **ucsd.edu** is the addition of `]` and not the backticks. We can add code to find the last close bracket rather than the next, and then check that the last close bracket is adjacent to a open parenthesis.
+For Line 7, we can approach it slightly differently because **ucsd.edu** is not recognized due to the addition of `]` and not the backticks. We can add code to find the last close bracket rather than the next, and then check that the last close bracket is adjacent to a open parenthesis.
 ```
 int lastCloseBracket = markdown.lastIndexOf("]", openParen);
 int lastOpenBracket = markdown.lastIndexOf("]", lastCloseBracket);
@@ -209,7 +209,7 @@ Our code already correctly detects the links in Line 1, and, after the correctio
 <br/>
 
 #### **Test 3**
-We can narrow down that the reason Lines 8-11 is not recognized as a link is due to the line breaks in the parentheses. To account for cases that have new lines in parentheses, you can use the String trim() method to isolate the text surrounded by whitespaces. 
+We can narrow down that the reason Lines 8-11 are not recognized as a link is due to the line breaks in the parentheses. To account for cases that have new lines in parentheses, you can use the String trim() method to isolate the text surrounded by whitespaces. 
 ```
 if (link.contains(" ")) {
     if (markdown.charAt(openParen + 1) != ' ' || 
