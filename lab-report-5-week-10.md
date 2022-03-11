@@ -35,6 +35,17 @@ bar>` should not be recognized as a link.
 The ***bug*** in the student implementation is that the code in `MarkdownParse.java` allows links to span over over line or after a line break. 
 
 #### **THE FIX** 
+We can add an *if statement* before our code to add the potential link to the arraylist in order to check for whether or not there is a space between the closed bracket and open parenthesis.
+```
+if (nextCloseBracket != openParen - 1) {
+   return toReturn; 
+}
+```
+
+After editing the file using `vim`, we see that making the change to the code gives up the correct output.
+
+![image](Screenshot2022-03-10160512.png)
+![image](Screenshot2022-03-10160512.png)
 
 <br/>
 
@@ -57,6 +68,17 @@ Using CommonMark, we see that the **student implementation** is correct because 
 The ***bug*** in the class implementation is that the code in `MarkdownParse.java` still recognizes the link even when there is a space between the closed bracket and open parenthesis.
 
 #### **THE FIX** 
+We can add an *if statement* before our code to add the potential link to the arraylist in order to check for whether or not there is a space between the closed bracket and open parenthesis.
+```
+if (nextCloseBracket != openParen - 1) {
+   return toReturn; 
+}
+```
+
+After editing the file using `vim`, we see that making the change to the code gives up the correct output.
+
+![image](Screenshot2022-03-10160512.png)
+![image](Screenshot2022-03-10160512.png)
 
 
 <br/>
