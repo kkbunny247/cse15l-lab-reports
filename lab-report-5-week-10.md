@@ -22,10 +22,12 @@ bar>)
 ![image](Screenshot2022-03-10144940.png)
 
 #### **class results:** 
-![image](Screenshot2022-03-10144940.png)
+![image](Screenshot2022-03-10145629.png)
 
 #### **EXPECTED OUTPUT** 
-![image](Screenshot2022-03-10144940.png)
+![image](Screenshot2022-03-10160011.png)
+
+
 
 <br/>
 
@@ -35,13 +37,13 @@ bar>)
 ```
 
 #### **student results:** 
-![image](Screenshot2022-03-10144940.png)
+![image](Screenshot2022-03-10160354.png)
 
 #### **class results:** 
-![image](Screenshot2022-03-10144940.png)
+![image](Screenshot2022-03-10160617.png)
 
 #### **EXPECTED OUTPUT** 
-![image](Screenshot2022-03-10144940.png)
+![image](Screenshot2022-03-10160512.png)
 
 <br/>
 
