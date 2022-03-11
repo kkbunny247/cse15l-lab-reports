@@ -29,10 +29,12 @@ bar>)
 #### **EXPECTED OUTPUT** 
 ![image](Screenshot2022-03-10160011.png)
 
-Using CommonMark, we see that the class implementation is correct because it produces `[]`, as `<foo
-bar>` is not going to be recognized as a link. 
+Using CommonMark, we see that the **class implementation** is correct because it produces `[]`, as `<foo
+bar>` should not be recognized as a link. 
 
-The *bug* in the student implementation 
+The ***bug*** in the student implementation is that the code in `MarkdownParse.java` allows links to span over over line or after a line break. 
+
+#### **THE FIX** 
 
 <br/>
 
@@ -50,10 +52,13 @@ The *bug* in the student implementation
 #### **EXPECTED OUTPUT** 
 ![image](Screenshot2022-03-10160512.png)
 
+Using CommonMark, we see that the **student implementation** is correct because it produces `[]`, as `/uri` should not be recognized as a link. 
+
+The ***bug*** in the class implementation is that the code in `MarkdownParse.java` still recognizes the link even when there is a space between the closed bracket and open parenthesis.
+
+#### **THE FIX** 
+
+
 <br/>
 
 ### This marks the end of CSE 15L! 🎉
-
-Describe which implementation is correct, or if you think neither is correct, by showing both actual outputs and indicating what the expected output is.
-
-For the implementation that’s not correct (or choose one if both are incorrect), describe the _bug (the problem in the code). You don’t have to provide a fix, but you should be specific about what is wrong with the program, and show the code that should be fixed.
