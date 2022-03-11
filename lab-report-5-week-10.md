@@ -34,6 +34,8 @@ bar>` should not be recognized as a link.
 
 The ***bug*** in the student implementation is that the code in `MarkdownParse.java` allows links to span over a line or after a line break. 
 
+<br/>
+
 #### **THE FIX** 
 Before our code adds the potential link to the arraylist, we can use the *trim* method on what is inside the parentheses: this gets rid of trailing and leading spaces. We can also add an *if statement* that will check for whether or not there is a space or line break inside the parentheses.
 ```
@@ -77,6 +79,8 @@ After editing the file using `vim`, we see that making the change to the code gi
 Using CommonMark, we see that the **student implementation** is correct because it produces `[]`, as `/uri` should not be recognized as a link. 
 
 The ***bug*** in the class implementation is that the code in `MarkdownParse.java` still recognizes the link even when there is a space between the closing bracket and opening parenthesis.
+
+<br/>
 
 #### **THE FIX** 
 We can add an *if statement* before our code adds the potential link to the arraylist in order to check for whether or not there is a space between the closed bracket and open parenthesis.
