@@ -5,6 +5,8 @@ We are going to be comparing the results of two `MarkdownParse.java` implementat
 
 #### **STUDENT REPOSITORY:** [https://github.com/m1ma0314/markdown-parse](https://github.com/m1ma0314/markdown-parse)
 
+<br/>
+
 We found the differences between the test results by using the program `diff`, which compares two files line by line and produces an output that shows exactly where the outputs vary.
 
 This is what we entered on the terminal or Command Prompt if `results.txt` is the output of `test-files`:
@@ -27,7 +29,10 @@ bar>)
 #### **EXPECTED OUTPUT** 
 ![image](Screenshot2022-03-10160011.png)
 
-Using CommonMark, we see that the 
+Using CommonMark, we see that the class implementation is correct because it produces `[]`, as `<foo
+bar>` is not going to be recognized as a link. 
+
+The *bug* in the student implementation 
 
 <br/>
 
