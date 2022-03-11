@@ -32,20 +32,31 @@ bar>)
 Using CommonMark, we see that the **class implementation** is correct because it produces `[]`, as `<foo
 bar>` should not be recognized as a link. 
 
-The ***bug*** in the student implementation is that the code in `MarkdownParse.java` allows links to span over over line or after a line break. 
+The ***bug*** in the student implementation is that the code in `MarkdownParse.java` allows links to span over a line or after a line break. 
 
 #### **THE FIX** 
-We can add an *if statement* before our code to add the potential link to the arraylist in order to check for whether or not there is a space between the closed bracket and open parenthesis.
+Before our code to add the potential link to the arraylist, we can use the *trim* method on what is inside the parentheses, which will create a String without trailing and leading spaces. We can also add an *if statement* that will check for whether or not there is a space or line break inside the parentheses.
 ```
-if (nextCloseBracket != openParen - 1) {
-   return toReturn; 
+String potentialLink = markdown.substring(openParen + 1, 
+   closeParen).trim();
+
+if (potentialLink.indexOf(" ") == -1 && potentialLink.indexOf
+   ("\n") == -1) {
+   toReturn.add(potentialLink);
+   currentIndex = closeParen + 1;
+}
+else {
+   currentIndex = currentIndex + 1;
 }
 ```
 
-After editing the file using `vim`, we see that making the change to the code gives up the correct output.
+After editing the file using `vim`, we see that making the change to the code gives us the correct output (changes were made at the cursor).
 
-![image](Screenshot2022-03-10160512.png)
-![image](Screenshot2022-03-10160512.png)
+![image](Screenshot2022-03-11094843.png)
+
+![image](Screenshot2022-03-11101503.png)
+
+![image](Screenshot2022-03-11101641.png)
 
 <br/>
 
@@ -75,11 +86,13 @@ if (nextCloseBracket != openParen - 1) {
 }
 ```
 
-After editing the file using `vim`, we see that making the change to the code gives up the correct output.
+After editing the file using `vim`, we see that making the change to the code gives us the correct output (changes were made at the cursor).
 
-![image](Screenshot2022-03-10160512.png)
-![image](Screenshot2022-03-10160512.png)
+![image](Screenshot2022-03-10165556.png)
 
+![image](Screenshot2022-03-11094742.png)
+
+![image](Screenshot2022-03-10165741.png)
 
 <br/>
 
