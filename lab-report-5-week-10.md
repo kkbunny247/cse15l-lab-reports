@@ -7,9 +7,9 @@ We are going to be comparing the results of two `MarkdownParse.java` implementat
 
 <br/>
 
-We found the differences between the test results by using the program `diff`, which compares two files line by line and produces an output that shows exactly where the outputs vary.
+We found the differences between the test results by using the program `diff`, which compares files line by line and produces an output that shows exactly where the files vary.
 
-This is what we entered on the terminal or Command Prompt if `results.txt` is the output of `test-files`:
+This is what we enter on the terminal or Command Prompt if `results.txt` is the output of `test-files`:
 ```
 diff some-markdown-parse/results.txt other-markdown-parse/results.txt > resultsDiffs.txt
 ```
